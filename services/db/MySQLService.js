@@ -1,6 +1,7 @@
 'use strict';
 const mysql = require('mysql2/promise'); // Import mysql2's promise-based version
 const config = require('../../config.json');
+require('dotenv').config();
 
 let pool; // Declare a global connection pool
 
@@ -10,10 +11,10 @@ class MySQLService {
     if (!pool) {
 
       const dbConfig = {
-      host: config.isLocalDB ? 'localhost' : 'zuju.com',
-      user: config.isLocalDB ? 'root' : 'zuju_prod_user',
-      password: config.isLocalDB ? '' : 'xxxxxx',
-      database: config.isLocalDB ? 'zuju' : 'zuju_prod',
+      host: config.ISDEV ? process.env.HOST : process.env.PHOST,
+      user: config.ISDEV ? process.env.USER : process.env.PUSER,
+      password: config.ISDEV ? process.env.PASSWORD : process.env.PPASSWORD,
+      database: config.ISDEV ? process.env.DB : process.env.PDB,
       waitForConnections: true,
       connectionLimit: 10,
       maxIdle: 10, // max idle connections, the default value is the same as `connectionLimit`

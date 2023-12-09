@@ -1,5 +1,5 @@
 {
-    "ISDEV": false,
-    "isLocalDB": false
+    "ISDEV": true,
+    "pageSize": 10
 
 }

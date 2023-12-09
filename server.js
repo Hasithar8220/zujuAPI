@@ -12,13 +12,24 @@ const MySQLService = require('./services/db/MySQLService.js');
 
 const app = express();
 
+ //Handling CORS for API
+ var corsOptions = {
+    optionsSuccessStatus: 200 
+};
+app.use(cors(corsOptions));
+
+//Incoming filesize limit
+app.use(express.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
+
 // ... (other middleware setup goes here)
 
 // Instantiate services with dependencies
 const mySQLService = new MySQLService();
-const fixturesService = new FixturesService(mySQLService, null, null, config);
+const fixturesService = new FixturesService(mySQLService, null, config);
 
 // Endpoint to get fixtures with pagination
+// In ideal world endpoint needs to go through token verification middleware method
 app.get('/fixtures', async (req, res) => {
     try {
         const page = req.query.page || 1;
@@ -31,6 +42,7 @@ app.get('/fixtures', async (req, res) => {
 
 
 // Endpoint to get distinct match dates
+// In ideal world endpoint needs to go through token verification middleware method
 app.get('/fixtures/calendar', async (req, res) => {
     try {
         const matchDates = await fixturesService.getDistinctMatchDates();

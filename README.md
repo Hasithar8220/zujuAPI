@@ -9,9 +9,9 @@ This project provides APIs to support the frontend for the Fixtures module. The 
 - Fixture Listing: Get a list of fixtures with tournament name, home & away teams, and match scores.
 - Fixtures Calendar: View a calendar with clickable dates for matches.
 
-## Hosted API (if applicable)
+## Hosted API (not available at the moment)
 
-- The hosted API is available at [Insert_Hosted_API_Link_Here]
+- The hosted API is available at [testapi.zuju.com]
 
 ## Local Development
 
@@ -27,7 +27,7 @@ To run the API server locally, follow the instructions below.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repository.git
+    git clone https://github.com/Hasithar8220/zujuAPI.git
     ```
 
 2. Change into the project directory:
@@ -46,12 +46,17 @@ To run the API server locally, follow the instructions below.
 
     - Create a MySQL database and update the configuration in `config.json`.
     - Execute the database schema script found in `db/create_schema.sql`.
+    - Populate data if needed by running `db/populate_data.sql`.
 
 5. Create a `.env` file in the project root with the following content:
 
     ```plaintext
-    PORT=3178
+    PORT=3179
     NODE_ENV=dev
+    HOST = localhost
+    USER = root
+    PASSWORD = ''
+    DB = zuju
     ```
 
     Update the values as needed.
@@ -62,7 +67,7 @@ To run the API server locally, follow the instructions below.
     npm start
     ```
 
-    The server will start at `http://localhost:3178`.
+    The server will start at `http://localhost:3179`.
 
 ### Testing
 
@@ -79,6 +84,6 @@ API documentation is not available in this README. Refer to [Insert_Documentatio
 
 ## Next Steps
 
-If you have any questions or need further assistance, feel free to contact [Your_Name] at [your.email@example.com].
+If you have any questions or need further assistance, feel free to contact [Hasi] at [ariyaratha@gmail.com].
 
 Happy coding!
