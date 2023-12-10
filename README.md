@@ -78,23 +78,23 @@ To run the API server locally, follow the instructions below.
 
 ### Unit Tests
 
-Unit tests:
 
-```bash
+    ```bash
     npm test
     ```
+   It will run unit tests
 
-### Integration tests
+## Integration tests
 To test the API locally, you can use tools like [Postman](https://www.postman.com/) or web browser to load GET requests.
 
-#### Example Endpoints:
+## Example Endpoints:
 
 - Fixture Listing: `GET http://localhost:3178/fixtures`
 - Fixtures Calendar: `GET http://localhost:3178/fixtures/calendar`
 
 ## API Documentation
 
-API documentation is not available in this README. Refer to [Insert_Documentation_Link_Here] for detailed API documentation.
+API documentation is not available in this README. Refer to [Not ready] for detailed API documentation.
 
 ## Next Steps
 
