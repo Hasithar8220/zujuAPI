@@ -61,7 +61,14 @@ To run the API server locally, follow the instructions below.
 
     Update the values as needed.
 
-6. Run the API server:
+6. API level configurations. Add below properties in config.json file:
+
+    ```bash
+    "ISDEV": true,
+    "pageSize": 10
+    ```    
+
+7. Run the API server:
 
     ```bash
     npm start
@@ -71,7 +78,13 @@ To run the API server locally, follow the instructions below.
 
 ### Testing
 
-To test the API locally, you can use tools like [Postman](https://www.postman.com/) or `curl` commands.
+Unit tests:
+
+```bash
+    npm test
+    ```
+
+To test the API locally, you can use tools like [Postman](https://www.postman.com/) or web browser to load GET requests.
 
 #### Example Endpoints:
 

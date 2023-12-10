@@ -38,7 +38,7 @@ async  runquery(sql, maxRetries = 3, retryInterval = 1000) {
   while (retries < maxRetries) {
     try {
       connection = await pool.getConnection();
-      const [rows, fields] = await connection.execute(sql);
+      const [rows] = await connection.execute(sql);
       return rows;
     } catch (error) {
       console.error(error);

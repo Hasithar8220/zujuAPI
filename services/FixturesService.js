@@ -1,8 +1,5 @@
 "use strict";
 
-const MySQLService = require('./db/MySQLService.js');
-const GeneralService = require('./utility/General.js');
-
 
 class FixturesService {
     /**
