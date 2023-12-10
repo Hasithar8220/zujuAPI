@@ -76,7 +76,7 @@ To run the API server locally, follow the instructions below.
 
     The server will start at `http://localhost:3179`.
 
-### Testing
+### Unit Tests
 
 Unit tests:
 
@@ -84,6 +84,7 @@ Unit tests:
     npm test
     ```
 
+### Integration tests
 To test the API locally, you can use tools like [Postman](https://www.postman.com/) or web browser to load GET requests.
 
 #### Example Endpoints:
